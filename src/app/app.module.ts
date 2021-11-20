@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconModule, MatToolbarModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,6 @@ import { MatIconModule, MatToolbarModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    MatIconModule,
     MatToolbarModule
     
     
