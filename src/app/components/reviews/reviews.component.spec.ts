@@ -1,4 +1,7 @@
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule, MatDividerModule, MatIconModule } from '@angular/material';
+import { ReviewService } from 'src/app/services/review.service';
 
 import { ReviewsComponent } from './reviews.component';
 
@@ -8,7 +11,17 @@ describe('ReviewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReviewsComponent ]
+      declarations: [ ReviewsComponent ],
+      imports: [ 
+        HttpClientModule,
+        MatCardModule,
+        MatDividerModule,
+        MatIconModule
+      ],
+      providers: [ 
+        HttpClient,
+        ReviewService
+      ]
     })
     .compileComponents();
   }));

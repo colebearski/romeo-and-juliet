@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material';
+import { MatCardModule, MatDividerModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import { ReviewService } from './services/review.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,18 @@ import { MatToolbarModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule,
     MatToolbarModule
     
     
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    ReviewService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

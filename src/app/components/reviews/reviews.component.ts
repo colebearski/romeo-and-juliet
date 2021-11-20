@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Review } from 'src/app/models/review';
+import { ReviewService } from 'src/app/services/review.service';
 
 @Component({
   selector: 'app-reviews',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewsComponent implements OnInit {
 
-  constructor() { }
+  reviews: Review[];
+
+  constructor(private reviewService: ReviewService) { }
 
   ngOnInit() {
+    this.reviewService.getReviews().subscribe((res: Review[]) => {
+      this.reviews = res;
+    });
   }
 
 }

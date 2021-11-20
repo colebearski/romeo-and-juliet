@@ -1,1 +1,24 @@
-<p>reviews works!</p>
+<div>
+    <mat-card *ngFor="let review of reviews" class="mb-4">
+        <mat-card-header>
+            <mat-card-title>
+                <span class="review-rating">Rating: {{ review.rating }}</span>
+                <mat-icon>star</mat-icon>
+            </mat-card-title>
+            <mat-card-subtitle>
+                Date: {{ review.publish_date | date: 'mediumDate' }}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                Author: {{ review.author }}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="review-content">
+                {{ review.body }}
+            </div>
+        </mat-card-content>
+        <mat-card-footer>
+            <mat-divider inset></mat-divider>
+        </mat-card-footer>
+    </mat-card>
+</div>
