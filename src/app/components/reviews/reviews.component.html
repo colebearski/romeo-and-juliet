@@ -3,7 +3,31 @@
         <mat-card-header>
             <mat-card-title>
                 <span class="review-rating">Rating: {{ review.rating }}</span>
-                <mat-icon>star</mat-icon>
+                <span *ngIf="review.rating <= 1.4">
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="review.rating <= 2.4 && review.rating > 1.5">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="review.rating <= 3.5 && review.rating > 2.5">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="review.rating <= 4.4 && review.rating > 3.5">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="review.rating <= 5 && review.rating > 4.4">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span> 
             </mat-card-title>
             <mat-card-subtitle>
                 Date: {{ review.publish_date | date: 'mediumDate' }}
