@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed, async } from '@angular/core/testing';
-import { MatCardModule, MatDividerModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import { MatButtonToggleModule, MatCardModule, MatDividerModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientModule,
+        MatButtonToggleModule,
         MatCardModule,
         MatDividerModule,
         MatIconModule,
