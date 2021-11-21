@@ -34,6 +34,26 @@
             <mat-divider inset></mat-divider>
         </mat-card-footer>
     </mat-card>
+    <mat-card class="mb-4">
+        <mat-card-header>
+            <mat-card-title>
+                <span class="review-rating">Filter Ratings</span>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-button-toggle-group class="mb-4" [value]="ratingScore" (change)="handleRatingFilter($event.value)">
+                <mat-button-toggle value="1">1</mat-button-toggle>
+                <mat-button-toggle value="2">2</mat-button-toggle>
+                <mat-button-toggle value="3">3</mat-button-toggle>
+                <mat-button-toggle value="4">4</mat-button-toggle>
+                <mat-button-toggle value="5">5</mat-button-toggle>
+                <mat-button-toggle value="clear">Clear</mat-button-toggle>
+            </mat-button-toggle-group>
+        </mat-card-content>
+        <mat-card-footer>
+            <mat-divider inset></mat-divider>
+        </mat-card-footer>
+    </mat-card>
     <mat-card *ngFor="let review of reviews$ | paginate: { itemsPerPage: 10, currentPage: p }" class="mb-4">
         <mat-card-header>
             <mat-card-title>

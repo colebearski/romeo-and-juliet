@@ -18,7 +18,7 @@ export class ReviewsComponent implements OnInit {
   constructor(private reviewService: ReviewService) { }
 
   ngOnInit() {
-    this.reviewService.getReviews().subscribe((res: any[]) => {
+    this.reviewService.getReviews().subscribe((res: Review[]) => {
       this.reviews$ = res;
 
       this.reviews$.map(rating => {
@@ -27,5 +27,19 @@ export class ReviewsComponent implements OnInit {
         this.average = Math.round((this.sum / this.ratingsArr.length) * 100) / 100;
       });
     });
+  }
+
+  handleRatingFilter(ratingScore) {
+    this.reviewService.getReviews().subscribe((res: Review[]) => {
+      let filterResults = res.filter((review) => {
+        return review.rating >= ratingScore && review.rating < parseInt(ratingScore) + parseInt('1');
+      })
+
+      if (ratingScore === 'clear') {
+        this.reviews$ = res;
+      } else {
+        this.reviews$ = filterResults;
+      }
+    })
   }
 }
