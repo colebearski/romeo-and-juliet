@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TestBed, async } from '@angular/core/testing';
 import { MatCardModule, MatDividerModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
         MatDividerModule,
         MatIconModule,
         MatToolbarModule,
+        NgxPaginationModule,
         RouterTestingModule
       ],
       declarations: [

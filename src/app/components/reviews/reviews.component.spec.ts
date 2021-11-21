@@ -1,6 +1,7 @@
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule, MatDividerModule, MatIconModule } from '@angular/material';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ReviewService } from 'src/app/services/review.service';
 
 import { ReviewsComponent } from './reviews.component';
@@ -16,7 +17,8 @@ describe('ReviewsComponent', () => {
         HttpClientModule,
         MatCardModule,
         MatDividerModule,
-        MatIconModule
+        MatIconModule,
+        NgxPaginationModule
       ],
       providers: [ 
         HttpClient,
