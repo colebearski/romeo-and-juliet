@@ -9,12 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule, MatDividerModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { ReviewService } from './services/review.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ReviewsComponent
+    ReviewsComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -24,9 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatDividerModule,
     MatIconModule,
-    MatToolbarModule
-    
-    
+    MatToolbarModule,
+    NgxPaginationModule
   ],
   providers: [
     HttpClientModule,

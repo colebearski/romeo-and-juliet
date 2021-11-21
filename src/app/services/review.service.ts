@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Review } from '../models/review';
 
 @Injectable({
@@ -11,11 +12,11 @@ export class ReviewService {
   authToken = 'H3TM28wjL8R4#HTnqk?c';
   header = new HttpHeaders()
     .set('x-api-key', this.authToken);
-  review: Review[];
+  review$: Review[];
 
   constructor(private http: HttpClient) { }
 
-  getReviews() {
+  getReviews(): Observable<Review[]> {
     return this.http.get<Review[]>(this.baseUrl, {'headers': this.header});
   }
 

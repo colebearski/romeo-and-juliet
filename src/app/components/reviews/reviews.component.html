@@ -1,5 +1,5 @@
 <div>
-    <mat-card *ngFor="let review of reviews" class="mb-4">
+    <mat-card *ngFor="let review of reviews$ | paginate: { itemsPerPage: 10, currentPage: p }" class="mb-4">
         <mat-card-header>
             <mat-card-title>
                 <span class="review-rating">Rating: {{ review.rating }}</span>
@@ -21,4 +21,5 @@
             <mat-divider inset></mat-divider>
         </mat-card-footer>
     </mat-card>
+    <pagination-controls (pageChange)="p = $event" class="mb-4 paginator"></pagination-controls>
 </div>
