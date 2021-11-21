@@ -1,4 +1,4 @@
-<img src="./src/assets/og-shakespeare.png" width="50%">
+<img src="./src/assets/og-shakespeare.png" width="35%">
 
 # Top Secret - Shakespeare Reviews
 
