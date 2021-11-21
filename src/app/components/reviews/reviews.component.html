@@ -1,4 +1,39 @@
 <div>
+    <mat-card class="mb-4">
+        <mat-card-header>
+            <mat-card-title>
+                <span class="review-rating">Average Rating for Romeo and Juliet: {{ average }}</span>
+                <span *ngIf="average < 1">
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="average <= 2 && average > 1">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="average <= 3 && average > 2">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="average <= 4 && average > 3">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span>
+                <span *ngIf="average <= 5 && average > 4">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </span> 
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-footer>
+            <mat-divider inset></mat-divider>
+        </mat-card-footer>
+    </mat-card>
     <mat-card *ngFor="let review of reviews$ | paginate: { itemsPerPage: 10, currentPage: p }" class="mb-4">
         <mat-card-header>
             <mat-card-title>
