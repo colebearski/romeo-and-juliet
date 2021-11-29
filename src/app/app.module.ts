@@ -10,6 +10,8 @@ import { MatButtonToggleModule, MatCardModule, MatDividerModule, MatIconModule, 
 import { ReviewService } from './services/review.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxsModule } from '@ngxs/store';
+import { ReviewsState } from './store/review.state';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatIconModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    NgxsModule.forRoot([ReviewsState]),
     NgxPaginationModule
   ],
   providers: [
