@@ -11,6 +11,7 @@ import { ReviewService } from './services/review.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { ReviewsState } from './store/review.state';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ReviewsState } from './store/review.state';
     MatProgressSpinnerModule,
     MatToolbarModule,
     NgxsModule.forRoot([ReviewsState]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxPaginationModule
   ],
   providers: [
