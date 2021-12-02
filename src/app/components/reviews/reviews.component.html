@@ -27,12 +27,26 @@
                     <mat-icon>star</mat-icon>
                     <mat-icon>star</mat-icon>
                     <mat-icon>star</mat-icon>
-                </span> 
+                </span>
             </mat-card-title>
         </mat-card-header>
         <mat-card-footer>
             <mat-divider inset></mat-divider>
         </mat-card-footer>
+    </mat-card>
+    <mat-card>
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Search reviews</mat-label>
+                <textarea 
+                    matInput 
+                    placeholder="Ex. It makes me feel..."
+                    name="search"
+                    [(ngModel)]="search">
+                </textarea>
+                <button mat-button (click)="handleSearch(search)">Search</button>
+            </mat-form-field>
+        </form>
     </mat-card>
     <mat-card class="mb-4">
         <mat-card-header>
@@ -82,7 +96,7 @@
                     <mat-icon>star</mat-icon>
                     <mat-icon>star</mat-icon>
                     <mat-icon>star</mat-icon>
-                </span> 
+                </span>
             </mat-card-title>
             <mat-card-subtitle>
                 Date: {{ review.publish_date | date: 'mediumDate' }}
